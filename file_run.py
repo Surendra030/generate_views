@@ -24,7 +24,7 @@ chromedriver_path = r"chromedriver"
 service = Service(executable_path=chromedriver_path)
 driver = webdriver.Chrome(service=service, options=options)
 
-keypass = os.getenv("PASSWORD")
+keypass = os.getenv("PASSWORD",'myApp101!')
 file_name = 'encrypted_data.json'
 data = decrypt_json(file_name,keypass)
 
