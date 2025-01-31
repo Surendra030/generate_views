@@ -27,11 +27,10 @@ driver = webdriver.Chrome(service=service, options=options)
 keypass = os.getenv("PASSWORD",'myApp101!')
 file_name = 'encrypted_data.json'
 data = decrypt_json(file_name,keypass)
-
 try:
         
     for index,url in enumerate(data):
-         data = decrypt_json(file_name,keypass)
+        data = decrypt_json(file_name,keypass)
         try:
                 
             if True ==0:
