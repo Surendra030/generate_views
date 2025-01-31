@@ -20,6 +20,6 @@ def decrypt_json(input_file: str, passphrase: str) -> dict:
     decrypted_data = cipher.decrypt(encrypted_data).decode()
     if decrypted_data : print("Decryption completed.")
     # Convert the decrypted data to a Python dictionary
-    return random.shuffle(json.loads(decrypted_data))
+    return json.loads(decrypted_data)
 
 

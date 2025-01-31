@@ -9,7 +9,7 @@ from decrypt import decrypt_json
 import json
 import os
 import time
-
+import random
 # Set up Chrome options
 options = Options()
 options.add_argument("--disable-gpu")
@@ -30,7 +30,7 @@ data = decrypt_json(file_name,keypass)
 try:
         
     for index,url in enumerate(data):
-        data = decrypt_json(file_name,keypass)
+        random.shuffle(data)
         try:
                 
             if True ==0:
