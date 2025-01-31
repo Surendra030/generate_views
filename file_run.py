@@ -24,7 +24,7 @@ chromedriver_path = r"chromedriver"
 service = Service(executable_path=chromedriver_path)
 driver = webdriver.Chrome(service=service, options=options)
 
-keypass = os.getenv("PASSWORD",'myApp101!')
+keypass = os.getenv('M_TOKEN')
 file_name = 'encrypted_data.json'
 data = decrypt_json(file_name,keypass)
 try:
@@ -33,29 +33,34 @@ try:
         random.shuffle(data)
         try:
                 
-            if True ==0:
-                driver.quit()
-                time.sleep(15)
-                service = Service(executable_path=chromedriver_path)
-                driver = webdriver.Chrome(service=service, options=options)
-                
+
 
             driver.get(url)
             time.sleep(2)
             body = driver.find_element("tag name", "body")  # Focus on the body
 
-            # Wait for the page to load
-            for i in range(4):
-                body.send_keys(Keys.SHIFT, ">")
-                time.sleep(1)
+            for i in range(10):
                 
-            for i in range(35):
+                # Wait for the page to load
+                for i in range(4):
+                    body.send_keys(Keys.SHIFT, ">")
+                    time.sleep(1)
                     
-                # Send the right arrow key or 'L' key
-                body.send_keys(Keys.ARROW_RIGHT)  # Simulate right arrow key
-                time.sleep(2)
-            time.sleep(10)
-            
+                for i in range(35):
+                        
+                    # Send the right arrow key or 'L' key
+                    body.send_keys(Keys.ARROW_RIGHT)  # Simulate right arrow key
+                    time.sleep(2)
+                
+                if True:
+                    driver.quit()
+                    time.sleep(15)
+                    service = Service(executable_path=chromedriver_path)
+                    driver = webdriver.Chrome(service=service, options=options)
+                    driver.get(url)
+                    time.sleep(2)
+                    body = driver.find_element("tag name", "body")  # Focus on the body
+                
         except Exception as e:
             print("Error 59 :",e)
         
